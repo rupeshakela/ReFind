@@ -1,0 +1,22 @@
+<%-include("includes/head.ejs")%>
+<%-include("includes/navbar.ejs")%>
+<h3 style="text-align: center; margin-top: 10px;">See In Details</h3>
+<div class="detail">
+    <img src="<%=result[0].image%>"
+    alt="image" style="margin-top: 10px; border-radius: 20px;">
+    <div class="details_info">
+        <p><strong>About Product: </strong><%=result[0].description%></p>
+        <p><strong>Price: ₹</strong><%= result[0].price %></p>
+        <p><strong>Seller Name: </strong><%=result[0].seller_name%></p>
+    </div>
+</div>
+<%if(currentUser && currentUser.id===result[0].user_id){%>
+<div class="change">
+    <a href="/prds/<%=result[0].id%>/edit">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </a>
+    <form action="/prds/<%=result[0].id%>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+<%}%>

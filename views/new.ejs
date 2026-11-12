@@ -1,0 +1,62 @@
+<%-include("includes/head.ejs")%>
+<%-include("includes/navbar.ejs")%>
+<%- include('includes/alert') %>
+<h3 style="text-align: center;margin-top: 10px;">Sell Your Item</h3>
+<form action="/prds/new" method="post" class="row g-3 needs-validation new_form" novalidate>
+    <div class="col-md-4">
+        <label for="image" class="form-label">Image URL</label>
+        <input type="url" class="form-control" id="image" name="image" required>
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback">
+            Please select a valid URL.
+        </div>
+    </div>
+
+   <div class="col-md-4">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" rows="3" name="description" required></textarea>
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback">
+            Please enter description.
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" name="price" step="0.01" min="0.01" required>
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback">
+            Please enter price.
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="category" class="form-label">Product_category</label>
+        <input type="text" class="form-control" id="category" name="category" required>
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback">
+            Please enter category.
+        </div>
+    </div>
+
+    <div class="col-12 fbtn">
+        <button class="btn btn-primary" type="submit" style="background-color: rgb(220, 82, 31); border: none;">Add Items</button>
+    </div>
+</form>
+<%- include("includes/frontValidate.ejs") %>

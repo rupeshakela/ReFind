@@ -1,0 +1,85 @@
+
+<%- include("includes/head.ejs") %>
+<%- include("includes/navbar.ejs") %>
+<%- include('includes/alert') %>
+
+<form action="/prds/<%= result[0].id %>/edit?_method=PATCH"
+      method="post"
+      class="needs-validation"
+      novalidate>
+
+    <div class="edit">
+
+        <img src="<%= result[0].image %>" alt="Product Image">
+
+        <div class="edit_content">
+
+            <!-- Image URL -->
+            <div class="form-group">
+                <label for="image" class="form-label">Image URL</label>
+                <input type="url" class="form-control"
+                       id="image" name="image"
+                       value="<%= result[0].image %>" required>
+
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please select a valid URL.</div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description"
+                          rows="3" name="description"
+                          required><%= result[0].description %></textarea>
+
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter description.</div>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control"
+                       id="price" name="price"
+                       step="0.01" min="0.01"
+                       value="<%= result[0].price %>" required>
+
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter price.</div>
+            </div>
+
+            <!-- Seller Name -->
+            <div class="form-group">
+                <label for="seller_name" class="form-label">Seller Name</label>
+                <input type="text" class="form-control"
+                       id="seller_name" name="seller_name"
+                       value="<%= result[0].seller_name %>" required>
+
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter seller name.</div>
+            </div>
+
+            <!-- Category Name -->
+            <div class="form-group">
+                <label for="category" class="form-label">Category Name</label>
+                <input type="text" class="form-control"
+                       id="category" name="category"
+                       value="<%= result[0].category %>" required>
+
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter category name.</div>
+            </div>
+
+            <!-- Update Button -->
+            <div class="fbtn">
+                <button class="btn btn-primary" type="submit"
+                        style="background-color: rgb(220, 82, 31); border: none;">
+                    Update
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<%- include("includes/frontValidate.ejs") %>

@@ -1,0 +1,33 @@
+<%-include("includes/head.ejs")%>
+<%-include("includes/navbar.ejs")%>
+<%- include('includes/alert') %>
+<h3 style="text-align: center; padding-top: 50px; color: maroon;">Welcome Back</h3>
+<div class="login">
+    <form action="" method="post" class="login_form needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="username" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please enter your username.
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please enter your password.
+                </div>
+        </div>
+        <button type="submit" class="btn btn-success">login</button>
+        <p style="text-align: center; padding-top: 2px; ">You don't have account ?<a href="/signin" style="text-decoration: none;">signIn</a></p>
+    </form>
+</div>
+<%- include("includes/frontValidate.ejs") %>

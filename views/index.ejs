@@ -1,0 +1,18 @@
+<%-include("includes/head.ejs")%>
+<%-include("includes/navbar.ejs")%>
+<%-include("includes/category.ejs")%>
+<div id="main">
+   <%for(let result of results){%>
+    <a href="/prds/<%=result.id%>" style="text-decoration: none; color: black;">
+        <div class="product-card">
+            <img src="<%=result.image%>"
+            alt="image">
+            <div class="icard">
+                <h6><%=result.description%></h6>
+                <h6><%=result.price%></h6>
+                <p><%=result.seller_name%></p>
+            </div>
+        </div>
+    </a>
+   <%}%>
+</div>

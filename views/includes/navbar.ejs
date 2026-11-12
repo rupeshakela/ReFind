@@ -1,0 +1,40 @@
+<nav id="nav">
+    <a href="/prds" style="margin-top: 5px; text-decoration: none; color: black;">
+        <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/4017/4017735.png" alt="sopping bag" >
+        <h6>ReFind</h6>
+        </div>
+    </a>
+
+
+
+    <div class="nav-center">
+        <div class="input-group mb-3" >
+            <form action="/prds" method="get">
+                <label for="category"></label>
+                <input type="text" class="form-control c1" placeholder="Search products..." style="margin-bottom: 20px;" name="category" id="category"> 
+            </form>
+        </div>
+    </div>
+
+
+    <div class="nav-right">
+       
+        <a href="/prds/new">
+            <button class="r1">+ Sell an Item</button>
+        </a>
+       <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" alt="profile" style="background-color: rgb(230, 218, 196);">
+       <img src="https://cdn-icons-png.flaticon.com/512/561/561135.png" alt="setting">
+       <div style="display: flex; margin-left: 10px;">
+        <% if(!currentUser){%>
+        <a href="/login" style="text-decoration: none;color: black;">Login</a>
+        &nbsp; &nbsp;&nbsp;&nbsp;
+        <a href="/signin" style="text-decoration: none;color: black;">Signin</a>
+        <%}%>
+        &nbsp; &nbsp;&nbsp;&nbsp;
+        <% if(currentUser){%>
+        <a href="/logout" style="text-decoration: none; color: black;">Logout</a>
+        <%}%>
+       </div>
+    </div>
+</nav>
