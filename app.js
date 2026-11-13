@@ -93,6 +93,13 @@ function asyncWrap(fn){
 } 
 //This is all API call
 
+
+app.get("/", (req, res) => {
+    res.redirect("/prds");
+});
+
+
+
 app.get("/prds",asyncWrap(async(req,res)=>{
     const {category}=req.query;
     let q="SELECT * FROM PRODUCTS";
