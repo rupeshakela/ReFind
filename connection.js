@@ -21,6 +21,7 @@
 
 
 
+
 require("dotenv").config();
 
 const mysql = require("mysql2");
@@ -49,15 +50,23 @@ const config = isProduction
         password: process.env.LOCAL_DB_PASSWORD
     };
 
-const connection = mysql.createConnection(config);
+// Create MySQL connection pool
+const connection = mysql.createPool({
+    ...config,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
-connection.connect((err) => {
+// Test database connection
+connection.getConnection((err, conn) => {
     if (err) {
         console.log("Database connection failed:", err.message);
         return;
     }
 
     console.log("Database connection successful");
+    conn.release();
 });
 
 module.exports = connection.promise();
