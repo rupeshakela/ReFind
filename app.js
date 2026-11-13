@@ -54,9 +54,6 @@ function asyncWrap(fn){
 //This is all API call
 
 app.get("/prds",asyncWrap(async(req,res)=>{
-    // let q=("SELECT * FROM PRODUCTS");
-    // const[results]=await connection.query(q);
-    // res.render("index.ejs",{results});
     const {category}=req.query;
     let q="SELECT * FROM PRODUCTS";
     let params=[];
