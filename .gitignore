@@ -1,2 +1,4 @@
-.env
 node_modules/
+.env
+connection.backup.js
+test-cloud.js
