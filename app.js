@@ -106,7 +106,7 @@ app.get("/prds",asyncWrap(async(req,res)=>{
     let params=[];
 
     if(category){
-        q+=" WHERE category =?";
+        q += " WHERE LOWER(category) = LOWER(?)";
         params.push(category)
     }
     const[results]=await connection.query(q,params);
