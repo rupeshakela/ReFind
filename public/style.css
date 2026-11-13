@@ -219,3 +219,147 @@ body{
     }
     margin: 5% 0% 0% 30%;
 }
+
+
+/* =================================
+   REFIND - RESPONSIVE DESIGN
+================================= */
+
+/* Common responsive settings */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 991px) {
+
+    .container {
+        max-width: 95%;
+    }
+
+    .category {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .category button {
+        margin: 4px;
+    }
+
+    .row {
+        --bs-gutter-x: 1rem;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Navbar */
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Category section */
+    .category {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    .category button {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+
+    /* Product cards */
+    .card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Forms */
+    form {
+        width: 100%;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 14px;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 14px;
+    }
+
+    /* Product details */
+    .card-body {
+        padding: 12px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    .category button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .card img {
+        height: 170px;
+    }
+
+    .btn {
+        padding: 7px 12px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+
+    .container {
+        max-width: 1140px;
+    }
+}
